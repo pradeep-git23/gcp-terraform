@@ -25,7 +25,7 @@ resource "google_compute_global_address" "this" {
 #}
 
 resource "google_compute_url_map" "https" {
-  name            = "${var.loadbalancer_name}-frontend-service"
+  name            = "${var.loadbalancer_name}"
   default_service = google_compute_backend_service.this.id
 }
 
