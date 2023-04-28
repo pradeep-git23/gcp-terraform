@@ -13,10 +13,6 @@ terraform {
 
  # required_version = "~> 0.15"
   required_version = "~> v1.4.2"
- backend "gcs" {
-   bucket  = "tfstatefile"
-   prefix  = "{vvar.loadbalancer_name}.tfstate"
- }
 }
 provider "google" {
   project = var.project
