@@ -1,0 +1,10 @@
+---
+- name: Create an AWS metric alarm
+  hosts: all
+#   connection: local
+#   become: yes
+#   gather_facts: false
+  
+  tasks:
+  - import_role:
+        name: AWS_Metric_Alarm
