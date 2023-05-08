@@ -44,7 +44,7 @@ resource "google_compute_instance_template" "ba-instance-temp" {
     scopes = ["cloud-platform"]
   }
 
-  tags = "backend-api-instance-template"
+  #tags = "backend-api-instance-template"
   lifecycle {
     create_before_destroy = true
   }
