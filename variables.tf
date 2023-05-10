@@ -1,7 +1,7 @@
 variable "project" {
     type = string
     description = "Google Cloud Platform Project ID"
-    default = "testing-project-371619" 
+    default = "project02-373018"
 }
 
 variable "region" {
@@ -13,7 +13,7 @@ variable "region" {
 variable "project_name" {
     type = string
     description = "project-name"
-    default = "testing-project"
+    default = "project02"
 }
 
 variable "zone" {
@@ -49,9 +49,9 @@ variable "deploy_version" {
 variable "image" {
     type = string
     description = "VM Image for Instance Template"
-    # default = "ubuntu-os-cloud/ubuntu-2204-lts"
+    default = "ubuntu-os-cloud/ubuntu-2204-lts"
     # default = "ubuntu-2204-lts-animo-backend"
-    default = "animo-backend-image-poc"
+   # default = "animo-backend-image-poc"
 }
 
 variable "tags" {
