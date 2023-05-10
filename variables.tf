@@ -81,7 +81,7 @@ variable "subnet" {
 variable "instance_description" {
     type = string
     description = "Description assigned to instances"
-    default = "This template is used to create nginx-app server instances"
+    default = "This template is used to create nginx-app server instances in gcp"
 }
 
 variable "instance_group_manager_description" {
@@ -100,4 +100,10 @@ variable "minimum_vm_size" {
     type = number
     description = "Minimum VM size in Instance Group"
     default = 1
+}
+
+variable "lb_name" {
+    type = string
+    description = "Description of instance template"
+    default = "ba-load-balancer"
 }
