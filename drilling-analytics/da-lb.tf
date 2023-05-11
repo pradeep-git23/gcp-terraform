@@ -18,3 +18,6 @@ resource "google_compute_region_backend_service" "da-backend" {
  #  balancing_mode        = "UTILIZATION"
  #  capacity_scaler       = 1.0
  #  max_rate_per_instance = 500
+
+
+  }}
