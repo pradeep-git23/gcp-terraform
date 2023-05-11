@@ -1,5 +1,5 @@
 resource "google_compute_instance_group_manager" "da-instance-grp-manager" {
-  name               = "da-instace-grp"
+  name               = "${var.da_instance_group}"
   base_instance_name = "da-binstance"
   #instance_template  = google_compute_instance_template.this.id
   zone               = var.zone

@@ -1,5 +1,5 @@
 resource "google_compute_instance_group_manager" "wa-instance-grp-manager" {
-  name               = "wa-instace-grp"
+  name               = "${var.wa-it}"
   base_instance_name = "wa-binstance"
   zone               = var.zone
   version {

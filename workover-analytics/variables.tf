@@ -78,10 +78,10 @@ variable "subnet" {
     default = "default"
 }
 
-variable "instance_description" {
+variable "autoscaler" {
     type = string
-    description = "Description assigned to instances"
-    default = "This template is used to create nginx-app server instances in gcp"
+    description = "autoscaler for workover analytics instance group"
+    default = "wa-autoscaler"
 }
 # This variable will be  used for instance group name
 variable "wa_instance_group" {

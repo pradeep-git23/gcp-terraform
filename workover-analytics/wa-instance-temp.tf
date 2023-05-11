@@ -1,10 +1,10 @@
 resource "google_compute_instance_template" "wa-instance-temp" {
-  name         = "wa-instance-temp"
+  name         = "${var.wa_instance_group}"
   description = "instance template for workover analytics instance template"
   tags = "${var.tags}"
 
   labels = {
-    service = "wa-instance-temp"
+    service = "${var.wa_instance_group}"
     version = "v1"
   }
 

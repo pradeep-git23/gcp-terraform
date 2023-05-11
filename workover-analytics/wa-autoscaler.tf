@@ -1,5 +1,5 @@
 resource "google_compute_autoscaler" "wa-autoscaler" {
-  name   = "wa-autoscaler"
+  name   = "${var.autoscaler}"
   zone   = var.zone
   target = google_compute_instance_group_manager.wa-instance-grp-manager.id
 
