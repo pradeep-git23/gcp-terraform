@@ -9,8 +9,8 @@ resource "google_compute_instance_group_manager" "ba-instance-grp-manager" {
       }
   target_size        = 2
   named_port {
-    name = "https"
-    port = 443
+    name = "tcp"
+    port = 80
   }
   auto_healing_policies {
     health_check   = google_compute_health_check.ba-https-health-check.self_link
