@@ -90,10 +90,11 @@ variable "instance_group_manager_description" {
     default = "Instance group for nginx-app server"
 }
 
-variable "instance_template_description" {
+# This variable will be  used for instance template name
+variable "da-it" {
     type = string
-    description = "Description of instance template"
-    default = "vm server template"
+    description = "Instance template for drilling analytics"
+    default = "testing-partner-12-drilling-analytics-template"
 }
 
 variable "minimum_vm_size" {
@@ -101,9 +102,15 @@ variable "minimum_vm_size" {
     description = "Minimum VM size in Instance Group"
     default = 1
 }
-
+# This variable will be  used for naming of load balancer
 variable "lb_name" {
     type = string
-    description = "Description of instance template"
-    default = "da-load-balancer"
+    description = "Load balancer for drilling analytics"
+    default = "testing-partner-12-drilling-analytics-load-balancer"
+}
+# This variable will be  used for instance group name
+variable "da_instance_group" {
+    type = string
+    description = "instance group manager drilling analytics"
+    default = "testing-partner-12-drilling-analytics-group"
 }

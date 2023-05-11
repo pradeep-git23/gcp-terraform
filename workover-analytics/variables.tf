@@ -83,11 +83,11 @@ variable "instance_description" {
     description = "Description assigned to instances"
     default = "This template is used to create nginx-app server instances in gcp"
 }
-
-variable "instance_group_manager_description" {
+# This variable will be  used for instance group name
+variable "wa_instance_group" {
     type = string
-    description = "Description of instance group manager"
-    default = "Instance group for nginx-app server"
+    description = "instance group manager workover analytics"
+    default = "testing-partner-12-workover-analytics-group"
 }
 
 variable "instance_template_description" {
@@ -96,14 +96,21 @@ variable "instance_template_description" {
     default = "vm server template"
 }
 
+# This variable will be  used for instance template name
+variable "wa-it" {
+    type = string
+    description = "Instance template for workover analytics"
+    default = "testing-partner-12-workover-analytics-template"
+}
+
 variable "minimum_vm_size" {
     type = number
     description = "Minimum VM size in Instance Group"
     default = 1
 }
-
+# This variable will be  used for naming of load balancer
 variable "lb_name" {
     type = string
-    description = "Description of instance template"
-    default = "wa-load-balancer"
+    description = "Load balancer for workover analytics"
+    default = "testing-partner-12-workover-analytics-load-balancer"
 }

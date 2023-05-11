@@ -96,14 +96,27 @@ variable "instance_template_description" {
     default = "vm server template"
 }
 
+# This variable will be  used for instance template name
+variable "ba-it" {
+    type = string
+    description = "Instance template for background tasks"
+    default = "testing-animo-background-tasks-template"
+}
+
 variable "minimum_vm_size" {
     type = number
     description = "Minimum VM size in Instance Group"
     default = 1
 }
-
+# This variable will be  used for naming of load balancer
 variable "lb_name" {
     type = string
-    description = "Description of instance template"
-    default = "ba-load-balancer"
+    description = "Load balancer for background tasks"
+    default = "testing-animo-background-tasks-load-balancer"
+}
+# This variable will be  used for instance group name
+variable "ba_instance_group" {
+    type = string
+    description = "instance group manager background tasks"
+    default = "testing-animo-background-tasks-group"
 }
