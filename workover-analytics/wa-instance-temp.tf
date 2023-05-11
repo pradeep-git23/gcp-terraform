@@ -1,10 +1,10 @@
-resource "google_compute_instance_template" "ba-instance-temp" {
-  name         = "ba-instance-temp"
-  description = "instance template for backend api instance template"
+resource "google_compute_instance_template" "wa-instance-temp" {
+  name         = "wa-instance-temp"
+  description = "instance template for workover analytics instance template"
   tags = "${var.tags}"
 
   labels = {
-    service = "ba-instance-temp"
+    service = "wa-instance-temp"
     version = "v1"
   }
 

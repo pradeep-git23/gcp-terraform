@@ -105,5 +105,5 @@ variable "minimum_vm_size" {
 variable "lb_name" {
     type = string
     description = "Description of instance template"
-    default = "ba-load-balancer"
+    default = "wa-load-balancer"
 }

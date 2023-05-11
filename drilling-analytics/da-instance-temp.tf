@@ -1,10 +1,10 @@
-resource "google_compute_instance_template" "ba-instance-temp" {
-  name         = "ba-instance-temp"
+resource "google_compute_instance_template" "da-instance-temp" {
+  name         = "da-instance-temp"
   description = "instance template for backend api instance template"
   tags = "${var.tags}"
 
   labels = {
-    service = "ba-instance-temp"
+    service = "da-instance-temp"
     version = "v1"
   }
 
@@ -13,7 +13,7 @@ resource "google_compute_instance_template" "ba-instance-temp" {
     block-project-ssh-keys = false
   }
 
-  instance_description    = "This template is created for Backend api instance group redis"
+  instance_description    = "This template is created for backend api instance group redis"
   machine_type            = "e2-medium"
   can_ip_forward          = false
   metadata_startup_script = "${file("./startup/script.sh")}"
