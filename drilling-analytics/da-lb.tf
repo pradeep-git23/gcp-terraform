@@ -20,4 +20,5 @@ resource "google_compute_region_backend_service" "da-backend" {
  #  max_rate_per_instance = 500
 
 
-  }}
+  }
+}

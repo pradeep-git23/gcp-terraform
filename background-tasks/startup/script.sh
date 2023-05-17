@@ -22,7 +22,7 @@ if [ ! -d "$dir" ]; then
     cd /var/www/html/Animo-Backend/backend/astra;
     chmod u+x /var/www/html/Animo-Backend/backend/astra/vm_creation_script.py;
     python3 /var/www/html/Animo-Backend/backend/astra/vm_creation_script.py;
-    sh -c "echo \"MACHINE_TYPE='Backend Middleware'\" >> /var/www/html/Animo-Backend/backend/astra/.env";
+    sh -c "echo \"MACHINE_TYPE='Background Tasks'\" >> /var/www/html/Animo-Backend/backend/astra/.env";
     sh -c "echo \"DEPLOYMENT_TIER='TESTING'\" >> /var/www/html/Animo-Backend/backend/astra/.env";
     sh -c "echo \"PARTNER_ID=12\" >> /var/www/html/Animo-Backend/backend/astra/.env";
     sh -c "echo \"WITSML_CONNECTION_ID=1\" >> /var/www/html/Animo-Backend/backend/astra/.env";

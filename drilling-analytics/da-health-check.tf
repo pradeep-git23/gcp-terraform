@@ -7,7 +7,6 @@ resource "google_compute_health_check" "da-https-health-check" {
 
   tcp_health_check {
     port         = 80
-    request_path = "/"
     response     = "Healthy"
   }
 }

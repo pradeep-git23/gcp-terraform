@@ -1,13 +1,13 @@
 resource "google_compute_instance_group_manager" "ba-instance-grp-manager" {
-  name               = "${var.ba_instance_group}"
-  base_instance_name = "ba-binstance"
+  name               = "${var.ba_instance_group}-${data.local_file.stdout.content}"
+  base_instance_name = "${var.ba_instance_group}"
   #instance_template  = google_compute_instance_template.this.id
   zone               = var.zone
   version {
     name             = "v1"
     instance_template  = google_compute_instance_template.ba-instance-temp.id
       }
-  target_size        = 2
+  target_size        = 1
   named_port {
     name = "tcp"
     port = 80

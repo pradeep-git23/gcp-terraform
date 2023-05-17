@@ -1,7 +1,7 @@
 variable "project" {
     type = string
     description = "Google Cloud Platform Project ID"
-    default = "project02-373018"
+    default = "testing-project-371619"
 }
 
 variable "region" {
@@ -13,7 +13,7 @@ variable "region" {
 variable "project_name" {
     type = string
     description = "project-name"
-    default = "project02"
+    default = "testing-project"
 }
 
 variable "zone" {
@@ -49,9 +49,9 @@ variable "deploy_version" {
 variable "image" {
     type = string
     description = "VM Image for Instance Template"
-    default = "ubuntu-os-cloud/ubuntu-2204-lts"
+    #default = "ubuntu-os-cloud/ubuntu-2204-lts"
     # default = "ubuntu-2204-lts-animo-backend"
-   # default = "animo-backend-image-poc"
+    default = "animo-backend-image-poc-new"
 }
 
 variable "tags" {
@@ -94,7 +94,7 @@ variable "instance_group_manager_description" {
 variable "da-it" {
     type = string
     description = "Instance template for drilling analytics"
-    default = "testing-partner-12-drilling-analytics-template"
+    default = "testing-partner-12-drilling-analytics-template-3-0-0"
 }
 
 variable "minimum_vm_size" {
@@ -106,7 +106,7 @@ variable "minimum_vm_size" {
 variable "lb_name" {
     type = string
     description = "Load balancer for drilling analytics"
-    default = "testing-partner-12-drilling-analytics-load-balancer"
+    default = "partner-12-drilling-analytics-load-balancer"
 }
 # This variable will be  used for instance group name
 variable "da_instance_group" {

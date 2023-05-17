@@ -1,15 +1,40 @@
+### Version Code resource block start###
+
+resource "null_resource" "std" {
+  triggers = { always_run = "${timestamp()}"}
+ provisioner "local-exec" {
+   
+     interpreter = ["/bin/bash", "-c"]
+    #interpreter = ["powershell", "-command"]
+     command = "git rev-parse --short HEAD|tr -d '\n' > ${path.root}/stdout.txt"
+    #command = "git rev-parse --short HEAD | ForEach-Object { $_ -replace '\n', '' } | Out-File -FilePath ./stdout.txt -Encoding ascii"
+    # command = " sh version.sh > ${path.root}/stdout.txt"
+  }
+
+}
+
+data "local_file" "stdout" {
+  filename = "${path.root}/stdout.txt"
+ depends_on = [null_resource.std]
+}
+
+output "shell_stdout" {
+ value = "${data.local_file.stdout.content}"
+}
+## Version Code resource block end###
+
 resource "google_compute_instance_template" "ba-instance-temp" {
-  name         = "${var.ba-it}"
+  name         = "${var.ba-it}-${data.local_file.stdout.content}"
   description = "instance template for backend api instance template"
   tags = "${var.tags}"
 
   labels = {
     service = "${var.ba-it}"
-    version = "v1"
+    version = "${var.deploy_version}-${data.local_file.stdout.content}"
   }
 
   metadata = {
-    version = "v1"
+    version = "${var.deploy_version}-${data.local_file.stdout.content}"
     block-project-ssh-keys = false
   }
 
@@ -40,7 +65,7 @@ resource "google_compute_instance_template" "ba-instance-temp" {
   }
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope a                                                      nd permissions granted via IAM Roles.
-    email  = "13671140023-compute@developer.gserviceaccount.com"
+    email  = "secret-manager-account@testing-project-371619.iam.gserviceaccount.com"
     scopes = ["cloud-platform"]
   }
 

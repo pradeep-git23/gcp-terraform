@@ -1,7 +1,7 @@
 variable "project" {
     type = string
     description = "Google Cloud Platform Project ID"
-    default = "project02-373018"
+    default = "testing-project-371619" 
 }
 
 variable "region" {
@@ -13,7 +13,7 @@ variable "region" {
 variable "project_name" {
     type = string
     description = "project-name"
-    default = "project02"
+    default = "testing-project"
 }
 
 variable "zone" {
@@ -28,6 +28,25 @@ variable "name" {
     default = "instance-template-02"
 }
 
+variable "instance_group_name" {
+    type = string
+    description = "The base name of resources"
+    default = "testing-animo-backend-group"
+}
+
+variable "loadbalancer_name" {
+    type = string
+    description = "The base name of resources"
+    default = "testing-animo-backend-load-balancer"
+}
+
+
+variable "template_name" {
+    type = string
+    description = "The base name of resources"
+    default = "testing-animo-backend-template-3-0-0"
+}
+
 variable "domain_name" {
     type = string
     description = "Valid Domain name"
@@ -40,18 +59,18 @@ variable "deploy_version" {
     default = "v1"
 }
 
-#variable "image" {
-#    type = string
-#    description = "VM Image for Instance Template"
-#    default = "debian-cloud/debian-11"
-#}
+variable "ssl" {
+    type = string
+    description = "Certificate attached with lb"
+    default = "testing-animo-backend-cert"
+}
 
 variable "image" {
     type = string
     description = "VM Image for Instance Template"
-    default = "ubuntu-os-cloud/ubuntu-2204-lts"
+    # default = "ubuntu-os-cloud/ubuntu-2204-lts"
     # default = "ubuntu-2204-lts-animo-backend"
-   # default = "animo-backend-image-poc"
+    default = "animo-backend-image-poc-new"
 }
 
 variable "tags" {
@@ -81,7 +100,7 @@ variable "subnet" {
 variable "instance_description" {
     type = string
     description = "Description assigned to instances"
-    default = "This template is used to create nginx-app server instances in gcp"
+    default = "This template is used to create nginx-app server instances"
 }
 
 variable "instance_group_manager_description" {
@@ -100,10 +119,4 @@ variable "minimum_vm_size" {
     type = number
     description = "Minimum VM size in Instance Group"
     default = 1
-}
-
-variable "lb_name" {
-    type = string
-    description = "Description of instance template"
-    default = "ba-load-balancer"
 }

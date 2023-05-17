@@ -1,12 +1,12 @@
 resource "google_compute_instance_group_manager" "wa-instance-grp-manager" {
-  name               = "${var.wa-it}"
-  base_instance_name = "wa-binstance"
+  name               = "${var.wa_instance_group}-${data.local_file.stdout.content}"
+  base_instance_name = "${var.wa_instance_group}"
   zone               = var.zone
   version {
-    name             = "v1"
+    name             = "${var.deploy_version}-${data.local_file.stdout.content}"
     instance_template  = google_compute_instance_template.wa-instance-temp.id
       }
-  target_size        = 2
+  target_size        = 1
   named_port {
     name = "tcp"
     port = 80
