@@ -5,10 +5,8 @@ resource "google_sql_database_instance" "postgres_instance" {
   settings {
     tier = "db-f1-micro"
 	ip_configuration {
-      authorized_networks {
-        name            = "default"
-        value           = "10.128.0.0/20"
-      }
+		 ipv4_enabled                                  = false
+		 private_network     = "default"
     }
   }
 }
