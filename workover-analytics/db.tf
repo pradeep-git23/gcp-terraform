@@ -33,7 +33,7 @@ variable "dbinstancename" {
 }
 variable "dbversion" {
   description = "Version of PostgreSQL database"
-  default     = "POSTGRES_13"
+  default     = "POSTGRES_14"
 }
 variable "dbname" {
   description = "Name of the PostgreSQL database"
