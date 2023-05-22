@@ -6,7 +6,7 @@ resource "google_sql_database_instance" "postgres_instance" {
     tier = "db-f1-micro"
 	ip_configuration {
 		 ipv4_enabled        = false
-		 private_network     = "projects/myProject/global/networks/default"
+		 private_network     = "projects/var.project/global/networks/default"
     }
   }
 }
