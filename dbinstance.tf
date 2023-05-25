@@ -30,8 +30,11 @@ resource "google_compute_instance" "db_instance" {
     email  = "secret-manager-account@testing-project-371619.iam.gserviceaccount.com"
     scopes = ["cloud-platform"]
   }
-  network_interface {
+   network_interface {
     network = "default"
+    access_config {
+      network_tier = "PREMIUM"
+    }
 
  #   access_config {
  #     // Ephemeral public IP (will be used when you want to give static ip to instance)
